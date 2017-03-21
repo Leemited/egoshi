@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/label_device_address"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/device_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp" />
+
+    </LinearLayout>-->
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Command:"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/connection_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/disconnected"
+            android:textSize="12sp" />
+
+    </LinearLayout>-->
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="0dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/label_data"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/data_value"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="@string/no_data"
+            android:textSize="11sp" />
+
+    </LinearLayout>-->
+
+    <!--<ScrollView
+        android:id="@+id/svResult"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        android:background="#FFFFFFFF"
+        android:fitsSystemWindows="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false" >
+
+        <TextView
+            android:id="@+id/svText"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textSize="16sp" />
+
+    </ScrollView>-->
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_weight="0.6"
+        android:layout_height="match_parent"
+        android:background="#161616">
+
+       <!-- <Button
+            android:text="RE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/refresh"
+            android:layout_alignParentEnd="true" />-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/default_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ani_bg"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:src="@drawable/ani00_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ani_img0"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                />
+
+            <ImageView
+                android:src="@drawable/ani01_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ani_img1"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:src="@drawable/ani02_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ani_img2"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+            <ImageView
+                android:src="@drawable/ani03_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ani_img3"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+            <ImageView
+                android:src="@drawable/ani04_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ani_img4"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+            <ImageView
+                android:src="@drawable/ani05_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ani_img5"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+            <ImageView
+                android:src="@drawable/ani06_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ani_img6"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:src="@drawable/sub01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sub01"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:src="@drawable/sub02"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sub02"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:src="@drawable/sub03"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sub03"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:src="@drawable/sub04"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sub04"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:src="@drawable/sub05"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sub05"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:src="@drawable/sub06"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sub06"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/sideBtn"
+                android:background="@drawable/submode_btn"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_weight="0.4"
+        android:minHeight="220dp"
+        android:layout_height="220dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:gravity="center"
+            android:layout_weight="0.8">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/preBtn"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/mode_btn"
+                android:gravity="center"
+                android:layout_marginRight="20dp" />
+
+            <Button
+                android:id="@+id/onoff"
+                android:background="@drawable/btn_off"
+                android:minHeight="50dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:layout_width="85dp"
+                android:layout_height="85dp" />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/nextBtn"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/mode_btn"
+                android:gravity="center"
+                android:layout_marginLeft="20dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--<TableLayout
+            android:id="@+id/TableLayout02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0px"
+            android:layout_weight="1.0"
+            android:stretchColumns="0"
+        android:visibility="gone">
+
+            <TableRow>
+
+            </TableRow>
+
+            <TableRow android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/editSend2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="4"
+                    android:inputType="textCapCharacters|textEmailAddress" />
+
+                <Button
+                    android:id="@+id/btnSend2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="0x0a,0x0d" />
+            </TableRow>
+
+        </TableLayout>-->
+
+<!--    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:visibility="gone" />-->
+
+
+</LinearLayout>

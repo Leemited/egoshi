@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Typekit"><attr name="font"><enum name="custom1" value="1"/><enum name="custom2" value="2"/><enum name="custom3" value="3"/><enum name="custom4" value="4"/><enum name="custom5" value="5"/><enum name="custom6" value="6"/><enum name="custom7" value="7"/><enum name="custom8" value="8"/><enum name="custom9" value="9"/></attr></declare-styleable>
+    <string name="app_name">egoshi</string>
+    <string name="ble_not_supported">BLE is not supported</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
+    <string name="info_addr1">40-11, Gamaa-gil, Gama-ri, Nami-myeon, Seowon-gu,</string>
+    <string name="info_addr2">Cheongju-si, Chungcheongbuk-do, Republic of Korea</string>
+    <string name="info_copyright">Copyrightⓒ 2017 egoshi. All right reserved.</string>
+    <string name="info_email">thestoryst@naver.com</string>
+    <string name="info_phone">t. +82 43. 296. 8222 / f. +82. 43. 296. 8223</string>
+    <string name="info_ver">Ver.1.0</string>
+    <string name="label_data">Data:</string>
+    <string name="label_device_address">Device address:</string>
+    <string name="label_state">State:</string>
+    <string name="menu_connect">Connect</string>
+    <string name="menu_disconnect">Disconnect</string>
+    <string name="menu_scan">Scan</string>
+    <string name="menu_stop">Stop</string>
+    <string name="no_data">No data</string>
+    <string name="title_devices">BLE Device Scan</string>
+    <string name="unknown_characteristic">Unknown characteristic</string>
+    <string name="unknown_device">Unknown device</string>
+    <string name="unknown_service">Unknown service</string>
+    <style name="AppTheme" parent="android:Theme.Holo">
+        <item name="android:actionBarSize">88dp</item>
+        <item name="android:actionBarDivider">@android:drawable/divider_horizontal_dark</item>
+        <item name="android:background">@android:color/black</item>
+    </style>
+    <style name="AppTheme.Dialog" parent="android:Theme.Holo.Dialog.NoActionBar">
+        <item name="android:background">#111111</item>
+    </style>
+    <style name="AppTheme2" parent="android:Theme.Holo">
+        <item name="android:actionBarSize">88dp</item>
+    </style>
+</resources>
