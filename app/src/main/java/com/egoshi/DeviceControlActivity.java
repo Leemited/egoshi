@@ -433,7 +433,6 @@ public class DeviceControlActivity extends Activity {
     
     private void displayData(String data) {
         if (data != null) {
-            Log.d(TAG, "displayData: " + data);
             String[] datas = data.split(" ");
             hiddenImg();
             if(data.length() < 60) {
@@ -489,9 +488,7 @@ public class DeviceControlActivity extends Activity {
         for (BluetoothGattService gattService : gattServices) {
             HashMap<String, String> currentServiceData = new HashMap<String, String>();
             uuid = gattService.getUuid().toString();
-            
-            Log.d(TAG,"service uuid : " + uuid);
-            
+
             currentServiceData.put(
                     LIST_NAME, SampleGattAttributes.lookup(uuid, unknownServiceString));
             currentServiceData.put(LIST_UUID, uuid);
@@ -599,14 +596,16 @@ public class DeviceControlActivity extends Activity {
                 if(!mConnected) return;
 
                 if(mConnected) {
-                    sendData("MODES");
-                    Handler handle = new Handler();
-                    handle.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            sendData("SUBS");
-                        }
-                    }, 600);
+                    if(flag==1) {
+                        sendData("MODES");
+                        Handler handle = new Handler();
+                        handle.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                sendData("SUBS");
+                            }
+                        }, 600);
+                    }
                 }
             }
         }
