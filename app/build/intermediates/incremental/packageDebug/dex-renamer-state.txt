@@ -1,4 +1,4 @@
-#Mon Mar 20 14:42:57 KST 2017
+#Wed Mar 29 14:51:14 KST 2017
 base.0=C\:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_57f6d00f04c0122551677c4fe904d374af1dc011
 renamed.1=classes.dex
 renamed.0=classes2.dex

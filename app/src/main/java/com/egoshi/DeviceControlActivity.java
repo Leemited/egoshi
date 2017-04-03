@@ -596,7 +596,7 @@ public class DeviceControlActivity extends Activity {
                 if(!mConnected) return;
 
                 if(mConnected) {
-                    if(flag==1) {
+                    //if(flag==1) {
                         sendData("MODES");
                         Handler handle = new Handler();
                         handle.postDelayed(new Runnable() {
@@ -605,7 +605,7 @@ public class DeviceControlActivity extends Activity {
                                 sendData("SUBS");
                             }
                         }, 600);
-                    }
+                    //}
                 }
             }
         }

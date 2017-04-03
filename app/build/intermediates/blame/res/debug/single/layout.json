@@ -4,12 +4,20 @@
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\splash.xml"
     },
     {
+        "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_footer.xml",
+        "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\listview_footer.xml"
+    },
+    {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_device.xml",
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\listitem_device.xml"
     },
     {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gatt_services_characteristics.xml",
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\gatt_services_characteristics.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview.xml",
+        "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\listview.xml"
     },
     {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\information_activity.xml",

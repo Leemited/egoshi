@@ -28,12 +28,12 @@
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\drawable\\ani02_bg.png"
     },
     {
-        "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\submode_btn.png",
-        "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\drawable\\submode_btn.png"
-    },
-    {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_off.png",
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\drawable\\btn_off.png"
+    },
+    {
+        "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\submode_btn.png",
+        "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\drawable\\submode_btn.png"
     },
     {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_line.9.png",

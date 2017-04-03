@@ -4,8 +4,16 @@
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\splash.xml"
     },
     {
+        "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\release\\layout\\listview_footer.xml",
+        "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\listview_footer.xml"
+    },
+    {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\release\\layout\\gatt_services_characteristics.xml",
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\gatt_services_characteristics.xml"
+    },
+    {
+        "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\release\\layout\\listview.xml",
+        "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\layout\\listview.xml"
     },
     {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\release\\layout\\actionbar_indeterminate_progress.xml",

@@ -72,12 +72,12 @@
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\drawable-xxhdpi\\ani01_bg.png"
     },
     {
-        "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi\\sub06.png",
-        "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\drawable-xxhdpi\\sub06.png"
-    },
-    {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi\\sub04.png",
         "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\drawable-xxhdpi\\sub04.png"
+    },
+    {
+        "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi\\sub06.png",
+        "source": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\src\\main\\res\\drawable-xxhdpi\\sub06.png"
     },
     {
         "merged": "C:\\Users\\Pc\\AndroidStudioProjects\\egoshi\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi\\sub01.png",

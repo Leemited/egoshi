@@ -17,6 +17,7 @@
 package com.egoshi;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -28,11 +29,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.TypefaceSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.LruCache;
 import android.view.LayoutInflater;
@@ -42,6 +45,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -54,11 +58,12 @@ import com.tsengvn.typekit.TypekitContextWrapper;
 /**
  * Activity for scanning and displaying available Bluetooth LE devices.
  */
-public class DeviceScanActivity extends ListActivity{
+public class DeviceScanActivity extends Activity{
 	private final static String TAG = BluetoothLeService.class.getSimpleName();
 
 	private LeDeviceListAdapter mLeDeviceListAdapter;
     private ListAdapter listAdapter;
+    private ListView list;
     private BluetoothAdapter mBluetoothAdapter;
     private boolean mScanning;
     private Handler mHandler;
@@ -76,7 +81,7 @@ public class DeviceScanActivity extends ListActivity{
         //startActivity(new Intent(this, SplashActivity.class));
     	
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.listview);
         //Log.d(TAG, "onCreate: " + );
         Typekit.getInstance().addNormal(Typekit.createFromAsset(this,"gulim.ttc")).addBold(Typekit.createFromAsset(this,"gulim.ttc"));
 
@@ -106,6 +111,38 @@ public class DeviceScanActivity extends ListActivity{
             finish();
             return;
         }
+
+        //View footer = (View) getLayoutInflater().inflate(R.layout.listview_footer,null,false);
+        Button linkButton = (Button) findViewById(R.id.button2);
+        linkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.storefarm.naver.com/egoshi"));
+                startActivity(intent);
+            }
+        });
+
+        list = (ListView) findViewById(R.id.listView);
+        //mLeDeviceListAdapter = new LeDeviceListAdapter();
+        //list.setAdapter(mLeDeviceListAdapter);
+        //scanLeDevice(true);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
+                if (device == null) return;
+                final Intent intent = new Intent(DeviceScanActivity.this, DeviceControlActivity.class);
+                intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
+                intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
+                if (mScanning) {
+                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
+                    mScanning = false;
+                }
+                startActivity(intent);
+            }
+        });
+        //list.addFooterView();
+        //this.getListView().addFooterView(footer);
     }
 
 
@@ -120,8 +157,7 @@ public class DeviceScanActivity extends ListActivity{
         } else {
             menu.findItem(R.id.menu_stop).setVisible(true);
             menu.findItem(R.id.menu_scan).setVisible(false);
-            menu.findItem(R.id.menu_refresh).setActionView(
-                    R.layout.actionbar_indeterminate_progress);
+            menu.findItem(R.id.menu_refresh).setActionView(R.layout.actionbar_indeterminate_progress);
         }
         return true;
     }
@@ -130,11 +166,11 @@ public class DeviceScanActivity extends ListActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_scan:
-                mLeDeviceListAdapter.clear();
                 scanLeDevice(true);
                 break;
             case R.id.menu_stop:
                 scanLeDevice(false);
+                mLeDeviceListAdapter.clear();
                 break;
         }
         return true;
@@ -155,7 +191,7 @@ public class DeviceScanActivity extends ListActivity{
 
         // Initializes list view adapter.
         mLeDeviceListAdapter = new LeDeviceListAdapter();
-        setListAdapter(mLeDeviceListAdapter);
+        list.setAdapter(mLeDeviceListAdapter);
         scanLeDevice(true);
     }
 
@@ -174,10 +210,8 @@ public class DeviceScanActivity extends ListActivity{
         super.onPause();
         scanLeDevice(false);
 //        mLeDeviceListAdapter.clear();
-
     }
-
-    @Override
+    /*
     protected void onListItemClick(ListView l, View v, int position, long id) {
         final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
         if (device == null) return;
@@ -189,7 +223,9 @@ public class DeviceScanActivity extends ListActivity{
             mScanning = false;
         }
         startActivity(intent);
-    }
+    }*/
+
+
 
     private void scanLeDevice(final boolean enable) {
         if (enable) {
@@ -281,9 +317,7 @@ public class DeviceScanActivity extends ListActivity{
             if (view == null) {
                 view = mInflator.inflate(R.layout.listitem_device, null);
                 viewHolder = new ViewHolder();
-                //viewHolder.deviceAddress = (TextView) view.findViewById(R.id.device_address);
                 viewHolder.deviceName = (TextView) view.findViewById(R.id.device_name);
-                //viewHolder.signalStrength = (TextView) view.findViewById(R.id.signal_strength);
                 view.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
@@ -293,14 +327,7 @@ public class DeviceScanActivity extends ListActivity{
             final String deviceName = device.getName();
             if (deviceName != null && deviceName.length() > 0){
                 viewHolder.deviceName.setText(deviceName);
-                //viewHolder.signalStrength.setText("RSSI : " + String.valueOf(rssi_array[i]));
-                //rssiCnt++;
             }
-            /*else {
-                viewHolder.deviceName.setText(R.string.unknown_device);
-                //viewHolder.signalStrength.setText("Place holder for Signal Strength");
-            }*/
-            //viewHolder.deviceAddress.setText(device.getAddress());
 
             return view;
         }
@@ -317,9 +344,13 @@ public class DeviceScanActivity extends ListActivity{
         	runOnUiThread(new Runnable() {
             	@Override
                 public void run() {
-                    mLeDeviceListAdapter.addDevice(device, rssi);
-                    mLeDeviceListAdapter.notifyDataSetChanged();
-                    
+                    Log.d(TAG, "run: " + device.getName());
+                    if(device.getName().equals("FBL780 v1.0.1")) {
+                        mLeDeviceListAdapter.addDevice(device, rssi);
+                        mLeDeviceListAdapter.notifyDataSetChanged();
+                    }else {
+                        return;
+                    }
                 }
             });
         }
@@ -327,8 +358,6 @@ public class DeviceScanActivity extends ListActivity{
 
     static class ViewHolder {
         TextView deviceName;
-        TextView deviceAddress;
-        TextView signalStrength;
     }
 
     @Override
