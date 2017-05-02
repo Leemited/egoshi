@@ -13,7 +13,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/editName"
         android:layout_marginTop="21dp"
-        android:background="@android:drawable/screen_background_light_transparent"
         android:text="@string/devicename_edit"
         android:textSize="20sp" />
 
